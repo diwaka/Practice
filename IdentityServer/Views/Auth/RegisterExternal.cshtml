@@ -1,0 +1,21 @@
+﻿@model IdentityServer.ViewModel.ExternalProviderViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "RegisterExternal";
+}
+
+<h1>RegisterExternal</h1>
+
+<form asp-controller="Auth" asp-action="ExternalRegister" method="post">
+
+    <input asp-for="ReturnUrl" type="hidden" class="form-control" />
+    <div class="form-group">
+        <label class="control-label">UserName</label>
+        <input asp-for="@Model.UserName" class="form-control" />
+
+    </div>
+    <div class="form-group">
+        <input type="submit" value="SignUp" class="btn btn-primary" />
+    </div>
+</form>

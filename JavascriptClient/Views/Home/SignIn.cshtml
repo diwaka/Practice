@@ -1,0 +1,11 @@
+﻿<!--<h1>SignIn</h1>-->
+<!--<button onclick="Token()">Token</button>-->
+<!--<script src="~/sign-in-callback.js"></script>-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/oidc-client/1.10.1/oidc-client.min.js"></script>
+<script>
+    var user = new Oidc.UserManager({ userStore: new Oidc.WebStorageStateStore({ store: window.localStorage })}); // tell where to store
+    user.signinCallback().then(res => {
+        window.location.href = "/Home/Index";
+    });
+</script>
